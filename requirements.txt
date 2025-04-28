@@ -1,0 +1,8 @@
+pandas
+openpyxl
+twilio
+mercadopago
+fastapi
+uvicorn
+selenium
+webdriver-manager

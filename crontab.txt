@@ -1,0 +1,1 @@
+0 9 * * * python /app/notify_costumer.py >> /var/log/cron.log 2>&1
