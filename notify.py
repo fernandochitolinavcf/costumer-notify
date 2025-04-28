@@ -74,7 +74,7 @@ def enviar_mensagem_whatsapp(numero_destino, link_pix):
     message = client.messages.create(
         from_=TWILIO_WHATSAPP_NUMBER,
         to=f"whatsapp:{numero_destino}",
-        content_sid='HX695f1b8e7540c89b98b6016879169238',
+        content_sid='HX4ddd76a8b9aded99110dd1e0128e58ce',
         content_variables=json.dumps({
             '1': link_pix
         })
