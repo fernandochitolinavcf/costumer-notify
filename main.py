@@ -41,7 +41,7 @@ def renovar_cliente_sistema(id_cliente):
 
     # 2. Aguarda 3 minutos para login via extensão quebrar captcha
     print("⏳ Aguardando 3 minutos para login automático via extensão...")
-    #time.sleep(180)
+    time.sleep(180)
     botao_login = driver.find_element(By.CSS_SELECTOR, 'button.btn.btn-primary.my-4')
     botao_login.click()
     print("🔑 Login realizado com sucesso!")
@@ -53,7 +53,7 @@ def renovar_cliente_sistema(id_cliente):
     time.sleep(5)
     campo_busca = driver.find_element(By.CSS_SELECTOR, 'input[placeholder="Pesquisar usuário"')  # Substitua pelo ID real
     campo_busca.clear()
-    campo_busca.send_keys(533340379)
+    campo_busca.send_keys(id_cliente)
 
     # 4. Aguarda carregar resultado e clica no botão de renovação
     time.sleep(1)
@@ -82,9 +82,3 @@ async def webhook(request: Request):
                 renovar_cliente_sistema(external_reference)
 
     return {"status": "received"}
-
-
-if __name__ == "__main__":
-    # Teste manual
-    id_para_testar = "123456"  # Substitua por um ID real de cliente
-    renovar_cliente_sistema(id_para_testar)
